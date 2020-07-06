@@ -18,6 +18,7 @@ client.on('message', message => {
 			if(!msg) return message.channel.send(":x: Error! Valid usage: " + `${prefix}` + "dmall <message>");
 			message.guild.members.filter(m => m.presence.status !== 'offline').forEach(m => {
 				m.send(`${msg}`);
+				console.log(`Send to: ${m}`)
 			});
 			let all = message.guild.members.filter(m => m.presence.status === 'online').size
 			embed = new Discord.RichEmbed()
